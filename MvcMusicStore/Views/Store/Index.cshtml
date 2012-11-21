@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Genre>
+@{
+    ViewBag.Title = "Store";
+}
+<h1>Genres</h1>
+<ul>
+    @foreach (var genre in Model)
+    { 
+        <li>@Html.ActionLink(genre.Name, "Browse", new {genre = genre.Name})</li>
+    }
+</ul>
