@@ -96,6 +96,7 @@ ul#album-list li a span
 {
 	color: #F6855E;
 	font-weight: bold;
+    margin-bottom:.5em;
 }
 
 .button, input[type=submit]
