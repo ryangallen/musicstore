@@ -1,5 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "";
 }
 
-<h1>It's the home page.</h1>
+<div id="promotion"></div>
+<h3><em>Fresh</em> off the Grill</h3>
+<ul id="album-list">
+    @foreach (var album in Model){
+        <li>
+            <a href="@Url.Action("Details", "Store", new { id = album.AlbumId})">
+                <img class="album-art" src="@album.AlbumArtUrl" alt="@album.Title" />
+                <span>@album.Title</span>
+            </a>
+        </li>
+    }
+</ul>
+<script>
+    (function(){
+        $('.album-art').each(function(){
+            $(this).attr('src', 'http://lorempixel.com/100/100/abstract/');
+        });
+    })();
+</script>
